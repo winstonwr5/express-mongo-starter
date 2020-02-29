@@ -4,13 +4,17 @@
 const express = require('express');
 const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
-const app = express ();
-const db = mongoose.connection;
+
+
 //___________________
 //Port
 //___________________
 // Allow use of Heroku's port or your own local port, depending on the environment
+require('dotenv').config()
+const app = express ();
+const db = mongoose.connection;
 const PORT = process.env.PORT || 3000;
+
 
 //___________________
 //Database
@@ -19,7 +23,9 @@ const PORT = process.env.PORT || 3000;
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/ohmycrud';
 
 // Connect to Mongo
-mongoose.connect(MONGODB_URI ,  { useNewUrlParser: true, useUnifedTopology: true});
+mongoose.connect(MONGODB_URI ,  { useNewUrlParser: true, useUnifedTopology: true, useFindAndModify: false, useCreateIndex: true}, () => {
+    console.log('the connection with mongo is established at', MONGODB_URI);
+};
 
 // Error / success
 db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
