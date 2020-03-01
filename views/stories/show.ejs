@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Give Your Story a Title: <%=story.title; %></h1>
+            <h2>Tell Your Tech Story: <%=story.entry; %></h2>
+            <br/>
+            <button type="button" name="button"><a href="/stories/<%=log._id%>">Edit Story</a></button>
+            <br>
+            <form action="/stories/<%=story._id%>?_method=DELETE" method="POST">
+                <input type="submit" value="DELETE"/>
+            </form>
+            <br>
+            <button type="button" name="button">
+                <a href="/">Back to Story Archive</a>
+            </button>
+        </div>
+    </body>
+</html>
