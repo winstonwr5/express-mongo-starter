@@ -10,6 +10,16 @@ const isAuthenticated = (req, res, next) => {
     }
 }
 
+// Index Route
+stories.get('/', (req, res) => {
+    Story.find({}, (error, allStories) => {
+        res.render('stories/index.ejs', {
+            stories: allStories
+            ,currentUser: req.session.currentUser
+        })
+    })
+})
+
 // New Route
 stories.get('/new', isAuthenticated, (req, res) => {
     res.render(
@@ -18,29 +28,27 @@ stories.get('/new', isAuthenticated, (req, res) => {
     )
 })
 
-// Edit Route
-stories.get('/:id/edit', isAuthenticated, (req, res) => {
-    Story.findById(req.params.id, (error, foundStory) => {
-        res.render('stories/edit.ejs', {
-            story: foundStory
-            ,currentUser: req.session.currentUser
-        })
+// Create Route
+stories.post('/', isAuthenticated, (req, res) => {
+    Story.create(req.body, (error, createdStory) => {
+        res.redirect('/')
     })
 })
 
 // Delete Route
 stories.delete('/:id', isAuthenticated, (req, res) => {
     Story.findByIdAndRemove(req.params.id, (err, deletedStory) => {
-        res.redirect('/stories')
+        res.redirect('/')
     })
 })
 
-// Show Route
-stories.get('/:id', isAuthenticated, (req, res) => {
+
+// Edit Route
+stories.get('/:id/edit', isAuthenticated, (req, res) => {
     Story.findById(req.params.id, (error, foundStory) => {
-        res.render('stories/show.ejs', {
+        res.render('stories/edit.ejs', {
             story: foundStory
-            , currentUser: req.session.currentUser
+            ,currentUser: req.session.currentUser
         })
     })
 })
@@ -57,19 +65,12 @@ stories.put('/:id', isAuthenticated, (req, res) => {
     )
 })
 
-// Create Route
-stories.post('/', isAuthenticated, (req, res) => {
-    Story.create(req.body, (error, createdStory) => {
-        res.redirect('/stories')
-    })
-})
-
-// Index Route
-stories.get('/', (req, res) => {
-    Story.find({}, (error, allStories) => {
-        res.render('stories/index.ejs', {
-            stories: allStories
-            ,currentUser: req.session.currentUser
+// Show Route
+stories.get('/:id', isAuthenticated, (req, res) => {
+    Story.findById(req.params.id, (error, foundStory) => {
+        res.render('stories/show.ejs', {
+            story: foundStory
+            , currentUser: req.session.currentUser
         })
     })
 })
@@ -88,7 +89,7 @@ stories.get('/setup/seed', isAuthenticated, (req, res) => {
             }
         ],
         (error, data) => {
-            res.redirect('/stories')
+            res.redirect('/')
         }
     )
 })

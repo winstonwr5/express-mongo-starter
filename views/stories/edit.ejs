@@ -6,11 +6,13 @@
     </head>
     <body>
         <div class="container">
-            <h1>New Stories</h1>
+            <h1>Edit Your Story</h1>
             <form action="/stories/<%=story.id%>?_method=PUT" method="POST">
-                Title: <input type="text" name="title"/><br/>
-                Entry: <textarea name="entry" rows="8" cols="80"></textarea><br/>
-                <input type="submit" name="" value="Archive"/>
+                <label for="title">Title:</label>
+                <input type="text" name="title" value="<%=story.title%>" /><br/>
+                <label for="entry">Entry:</label>
+                <textarea name="entry" rows="8" cols="80"><%=story.entry%></textarea><br/>
+                <input type="submit" name="" value="Submit Changes"/>
             </form>
             <button type="button" name="button">
                 <a href="/stories">Back</a>
