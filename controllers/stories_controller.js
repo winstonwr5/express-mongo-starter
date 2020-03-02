@@ -86,8 +86,10 @@ stories.get('/setup/seed', isAuthenticated, (req, res) => {
                 title: 'HandUp',
                 entry: 'HandUp is a startup built around a mobile donation platform for communities to support their homeless and in-need neighbors. Working with fulfillment partners, they aim is to make sure that any donations go toward necessary items like medicine, food, and housing resources.'
             }
-        ]
-
+        ],
+        (error, data) => {
+            res.redirect('/stories')
+        }
     )
 })
 
