@@ -77,6 +77,16 @@ stories.get('/', (req, res) => {
 // Seed Route
 stories.get('/setup/seed', isAuthenticated, (req, res) => {
     Story.create(
+        [
+            {
+                title: 'The Farmery',
+                entry: 'I heard about this urban vertical farming and retailing system back in 2014! The basic concept is a local system of agricultural production based within and aimed at growing foodstuffs for populations within urban "food deserts". Very cool!'
+            },
+            {
+                title: 'HandUp',
+                entry: 'HandUp is a startup built around a mobile donation platform for communities to support their homeless and in-need neighbors. Working with fulfillment partners, they aim is to make sure that any donations go toward necessary items like medicine, food, and housing resources.'
+            }
+        ]
 
     )
 })
