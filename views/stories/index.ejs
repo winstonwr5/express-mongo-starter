@@ -19,6 +19,9 @@
         <link href="https://fonts.googleapis.com/css?family=Gravitas+One|Hind&display=swap" rel="stylesheet">
     </head>
     <body>
+        <div style="background-image: url('https://eoimages.gsfc.nasa.gov/images/imagerecords/88000/88348/iss043e093480_lrg.jpg')">
+        <img class="top" scr="https://frontiersinblog.files.wordpress.com/2019/03/forest-drone-aerial-view-texture-green-woodland.jpg?w=620">
+        </div>
         <div class="wrapper">
             <!-- Sidebar -->
             <nav id="sidebar">
@@ -86,11 +89,8 @@
                     </div>
                 </div>
             </nav>
-        </div>
-        <!-- Overlay -->
-        <div class="overlay"></div>
-    </div>
-            <h1>Stories Index Page</h1>
+
+            <h1>Tech Stories...On The Ground</h1>
             <ul>
                 <% for(let story of stories){ %>
                     <li>
@@ -100,18 +100,39 @@
                     </li>
                 <% } %>
             </ul>
+            <footer class="page-footer font-small special-color-dark pt-4">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <form class="form-inline">
+                                <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search Oasitic" aria-label="Search">
+                                <i class="fas fa-search" aria-hidden="true"></i>
+                            </form>
+                        </div>
+                        <div class="col -md-6 mb-4">
+                            <form class="input-group">
+                                <input type="text" class="form-control form-control- sm" placeholder="Your email" aria-label="Your email" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                    <button class="btn btn-sm btn-outline-white my-0" type="button">Sign Up</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-copyright text-center py-3">
+                    <span>2020 SEIR</span>
+                    <span>Made by W.R. Winston</span>
+                </div>
+            </footer>
         </div>
-        <footer>
-            <span>2020</span>
-            <span>Made by W.R. Winston</span>
-        </footer>
+
         <!-- jQuery CDN -->
             <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
             <!-- JS for pop-out effect -->
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
             <!-- Bootstrap JS -->
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-            
+
             <script type="text/javascript">
                 $(document).ready(function () {
                     $('#sidebarCollapse').on('click', function () {
