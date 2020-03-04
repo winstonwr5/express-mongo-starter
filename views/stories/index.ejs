@@ -1,37 +1,93 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
-        <%- include ('./partials/head.ejs')%>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Oasitic</title>
+
+        <!-- Bootstrap CSS CDN -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+        <!-- My CSS Work -->
+        <link rel="stylesheet" href="/css/main.css">
+
+        <!-- Special button fonts -->
+        <!-- <link href="https://fonts.googleapis.com/css?family=Gravitas+One|Hind|Lato|Spectral+SC&display=swap" rel="stylesheet"> -->
+        <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
     </head>
     <body>
+        <header>
+            <h1>Oasitic</h1>
+            <ul>
+                <li><a href="/stories">Home</a></li>
+                <li><a href="/stories/new">Tell Your Story</a></li>
+            </ul>
+        </header>
         <div class="wrapper">
+            <!-- Sidebar -->
             <nav id="sidebar">
+
+                <div id="dismiss">
+                    <i class="fas fa-arrow-left"></i>
+                </div>
+
                 <div class="sidebar-header">
-                    <h3>Collapsible Sidebar</h3>
+                    <h3>Oasitic</h3>
                 </div>
 
                 <ul class="list-unstyled components">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li>
-                        <a href="#homeSubMenu" data-toggle="collapse" aria-expanded="false">Pages</a>
+                    <li class="active">
+                        <li>
+                            <a href="#">About</a>
+                        </li>
+                        <li>
+                        <a href="#homeSubMenu" data-toggle="collapse" aria-expanded="false">Show</a>
                         <ul class="collapse list-unstyled" id="homeSubMenu">
                             <li><a href="#">Page</a></li>
                             <li><a href="#">Page</a></li>
                             <li><a href="#">Page</a></li>
                         </ul>
+                        </li>
                     </li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li>
+                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">Tell</a>
+                        <ul class="collapse list-unstyled" id="pageSubmenu">
+                            <li>
+                                <a href="#">Page 1</a>
+                            </li>
+                            <li>
+                                <a href="#">Page 2</a>
+                            </li>
+                            <li>
+                                <a href="#">Page 3</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">The Podcast</a>
+                    </li>
+                    <li>
+                        <a href="#">Resources</a>
+                    </li
                 </ul>
-            </nav>
+                <!-- Page -->
         <div id="content">
-            <button type="button" id="sidebarCollapse" class="navbar-btn">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" if="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                        <span>Menu</span>
+                    </button>
+                </div>
+            </nav>
         </div>
+        <!-- Overlay -->
+        <div class="overlay"></div>
+    </div>
             <h1>Stories Index Page</h1>
             <ul>
                 <% for(let story of stories){ %>
@@ -43,5 +99,16 @@
                 <% } %>
             </ul>
         </div>
+        <footer>
+            <span>2020</span>
+            <span>Made by W.R. Winston</span>
+        </footer>
+        <!-- jQuery CDN -->
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <!-- JS for pop-out effect -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+            <!-- Bootstrap JS -->
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+            <script src="public/js/global.js" charset="utf-8"></script>
     </body>
 </html>
