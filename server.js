@@ -21,7 +21,9 @@ const PORT = process.env.PORT || 3000;
 //Database
 //___________________
 // How to connect to the database either via heroku or locally
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/ohmycrud';
+const MONGODB_URI = process.env.MONGODB_URI;
+
+// const MONGODB_URI = 'mongodb://localhost/ohmycrud';
 
 // Connect to Mongo
 mongoose.connect(MONGODB_URI ,  {
